@@ -6,6 +6,7 @@ MAPE = 0.1872, 名次 57 / 3754
 程序共有三个模型
 m1: Pred_big_XGB是直接对整个路段总时间进行预测,使用XGB模型
 最后取定参数为:
+```
 params={
     'booster':'gbtree',
     'objective':'reg:logistic', #逻辑回归问题
@@ -19,11 +20,13 @@ params={
     'seed':1000,
     "silent": 1
     }
+```
 迭代次数为218
 
 
 m2: Pred_cut_XGB是将大路段切分为小路后分别对每个小路段进行预测,然后重组,使用XGB模型
 最后参数取定为:
+```
 params={
     'booster':'gbtree',
     'objective':'reg:logistic', #逻辑回归问题
@@ -36,6 +39,7 @@ params={
     'seed':1000,
     "silent": 1
     }
+```
 迭代次数为627
 
 
