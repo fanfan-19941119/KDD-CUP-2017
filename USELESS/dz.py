@@ -76,7 +76,6 @@ def MAPE_and_plot(data_all):
     plt.show()
 
 if __name__ == '__main__':
-    pp = "F:\KDD CUP 2017\\2017_5_22\\"
     data_all = in_file('Travel_Time_Prediction.csv')
     data_all = add_or_multiple(data_all)
     MAPE_and_plot(data_all)
