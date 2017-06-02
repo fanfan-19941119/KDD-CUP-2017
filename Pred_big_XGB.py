@@ -2,7 +2,7 @@
 
 import numpy as np
 import xgboost as xgb
-import utils_big
+import utils_big_XGB
 
 # from configs import save_model_path
 
@@ -13,7 +13,7 @@ import utils_big
 
 CV = False
 
-(train_x, train_y, test_x, outinfo) = utils_big.load_data()
+(train_x, train_y, test_x, outinfo) = utils_big_XGB.load_data()
 print(len(train_x), len(train_y), len(test_x))
 print(train_x.shape)
 
@@ -40,7 +40,7 @@ params={
 plst = list(params.items())
 num_rounds = 10000 # 迭代次数
 
-trainx, trainy, testx, scalerX, scalerY = utils_big.mscale(train_x, train_y, test_x)
+trainx, trainy, testx, scalerX, scalerY = utils_big_XGB.mscale(train_x, train_y, test_x)
 
 xgb_train = xgb.DMatrix(trainx, label=trainy)
 
@@ -91,7 +91,7 @@ else:
     preds = model.predict(xgb_test,ntree_limit=model.best_ntree_limit)
 
     predict_y = scalerY.inverse_transform(preds)
-    utils_big.write_prediction(predict_y, outinfo)
+    utils_big_XGB.write_prediction(predict_y, outinfo)
 
 # #输出运行时长
 cost_time = time.time()-start_time
