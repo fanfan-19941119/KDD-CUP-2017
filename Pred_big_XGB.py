@@ -84,7 +84,7 @@ if CV:
     print "\n"
 
 else:
-    model = xgb.train(plst, xgb_train, 19, obj=mapeobj, feval=evalmape)
+    model = xgb.train(plst, xgb_train, 218, obj=mapeobj, feval=evalmape)
     # model.save_model(save_model_path +"gamma02eta001.model") # 用于存储训练出的模型
     # print("best best_ntree_limit",model.best_ntree_limit)
 
