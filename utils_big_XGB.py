@@ -133,8 +133,8 @@ def read_big(traj, weather, mode):
         outinfo = []
         test_times = []
         for i in range(7):
-            test_times.append(datetime(2016, 10, 18, 6, 0, 0))
-            test_times.append(datetime(2016, 10, 18, 15, 0, 0))
+            test_times.append(datetime(2016, 10, 18 + i, 6, 0, 0))
+            test_times.append(datetime(2016, 10, 18 + i, 15, 0, 0))
         for route_name in travel_times:
             for travel_time in test_times:
                 if (travel_time.hour == 6 or travel_time.hour == 15) and int(travel_time.minute) == 0:
